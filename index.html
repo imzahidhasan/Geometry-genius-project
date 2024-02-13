@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius </title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container mx-auto">
+    <header class="container mx-auto" <div class="navbar bg-base-100">
+        <div class="navbar justify-center items-center mx-auto shadow-xl rounded-lg">
+            <a class="btn btn-ghost text-xl">Geometry Genius</a>
+            <div">
+                <a class="btn">Blog</a>
+
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn m-1">
+                        Theme
+                        <svg width="12px" height="12px" class="h-2 w-2 fill-current opacity-60 inline-block"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+                            <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                        </svg>
+                    </div>
+                    <ul tabindex="0" class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52">
+                        <li><input type="radio" name="theme-dropdown"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                aria-label="Default" value="light" /></li>
+                        <li><input type="radio" name="theme-dropdown"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro"
+                                value="retro" /></li>
+                        <li><input type="radio" name="theme-dropdown"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                aria-label="Valentine" value="valentine" /></li>
+                        <li><input type="radio" name="theme-dropdown"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua"
+                                value="aqua" /></li>
+                    </ul>
+                </div>
+        </div>
+        </div>
+        <main class="mt-12 mx-auto">
+            <div class="card-section grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mx-auto container">
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-blue-300 mx-auto">
+                    <figure class="p-5"><img src="img/triangle.png" alt="triangle" /></figure>
+                    <div class="card-body text-center mx-auto">
+                        <h2 class="card-title justify-center">Triangle</h2>
+                        <div class="flex space-x-2 justify-center items-center">
+                            <input id="baseOfTriangle" type="text" placeholder="Base"
+                                class="input input-bordered w-1/2 max-w-xs" /> <span>cm</span>
+                            <input id="heightOfTriangle" type="text" placeholder="Height"
+                                class="input input-bordered w-1/2 max-w-xs" /><span>cm</span>
+                        </div>
+                        <p>Area (A) = 0.5 X b X h</p>
+                        <p>Area of triangle: <span id="triangleArea"> 0 </span><span>cm<sup>2</sup></span></p>
+                        <div class="card-actions">
+                            <button id="triangleButton" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-blue-300 mx-auto">
+                    <figure class="p-5"><img src="img//rectangle.png" alt="triangle" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="card-title justify-center">Rectangle</h2>
+                        <div class="flex space-x-4 justify-center items-center">
+                            <input id="widthOfRectangle" type="text" placeholder="Width"
+                                class="input input-bordered w-1/2 max-w-xs" /> <span>cm</span>
+                            <input id="lengthOfRectangle" type="text" placeholder="Length"
+                                class="input input-bordered w-1/2 max-w-xs" /><span>cm</span>
+                        </div>
+                        <p>Area (A) =w X h</p>
+                        <p>Area of Rectangle: <span id="rectangleArea"> 0 </span><span>cm<sup>2</sup></span></p>
+                        <div class="card-actions">
+                            <button id="rectangleButton" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-blue-300 mx-auto">
+                    <figure class="p-5"><img src="img//parallelogram.png" alt="Parallelogram" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="card-title justify-center">Parallelogram</h2>
+                        <div class="flex space-x-4 justify-center items-center">
+                            <input id="baseOfParallelogram" type="text" placeholder="Base"
+                                class="input input-bordered w-1/2 max-w-xs" /> <span>cm</span>
+                            <input id="heighOfParallelogram" type="text" placeholder="Height"
+                                class="input input-bordered w-1/2 max-w-xs" /><span>cm</span>
+                        </div>
+                        <p>Area (A) =b X h</p>
+                        <p>Area of Parallelogram: <span id="parallelogramArea"> 0 </span><span>cm<sup>2</sup></span></p>
+                        <div class="card-actions">
+                            <button id="parallelogramButton" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-pink-300 mx-auto">
+                    <figure class="p-5"><img src="img//rhombus.png" alt="Rhombus" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="card-title justify-center">Rhombus</h2>
+                        <div class="flex space-x-4 justify-center items-center">
+                            <input id="diagonalOfRhombus1" type="text" placeholder="Diagonal 1"
+                                class="input input-bordered w-1/2 max-w-xs" /> <span>cm</span>
+                            <input id="diagonalOfRhombus2" type="text" placeholder="Diagonal 2"
+                                class="input input-bordered w-1/2 max-w-xs" /><span>cm</span>
+                        </div>
+                        <p>Area (A) = 0.5 X d <sub>1</sub> X d <sub>2</sub></p>
+                        <p>Area of Rhombus: <span id="rhombusArea"> 0 </span><span>cm<sup>2</sup></span></p>
+                        <div class="card-actions">
+                            <button id="rhombusButton" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-pink-300 mx-auto">
+                    <figure class="p-5"><img src="img//pentagon.png" alt="Pentagon" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="card-title justify-center">Pentagon</h2>
+                        <div class="flex space-x-4 justify-center items-center">
+                            <input id="pentagonPerimeter" type="text" placeholder="Perimeter"
+                                class="input input-bordered w-1/2 max-w-xs" /> <span>cm</span>
+                            <input id="pentagonApothem" type="text" placeholder="Apothem"
+                                class="input input-bordered w-1/2 max-w-xs" /><span>cm</span>
+                        </div>
+                        <p>Area (A) = 0.5 X p X b</p>
+                        <p>Area of Pentagon: <span id="pentagonArea"> 0 </span><span>cm<sup>2</sup></span></p>
+                        <div class="card-actions">
+                            <button id="pentagonButton" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-96 bg-base-100 shadow-xl hover:bg-pink-300 mx-auto">
+                    <figure class="p-5"><img src="img/ellipse.png" alt="ellipse" /></figure>
+                    <div class="card-body text-center">
+                        <h2 class="card-title justify-center">Ellipse</h2>
+                        <div class="flex space-x-4 justify-center items-center">
+                            <input id="EllipseLargeAxis" type="text" placeholder="Large Axis"
+                                class="input input-bordered w-1/2 max-w-xs" /> <span>cm</span>
+                            <input id="EllipseSmallAxis" type="text" placeholder="Small Axis"
+                                class="input input-bordered w-1/2 max-w-xs" /><span>cm</span>
+                        </div>
+                        <p>Area (A) = πab </p>
+                        <p>Area of Ellipse: <span id="ellipseArea"> 0 </span><span>cm<sup>2</sup></span></p>
+                        <div class="card-actions">
+                            <button id="ellipseButton" class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        </div>
+    </header>
+    <script src="script.js"></script>
+</body>
+
+</html>
